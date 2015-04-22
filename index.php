@@ -84,9 +84,9 @@ require('core/init.php');
               <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav foo1">
                   <li class="active mywidth"><a href="#">Home</a></li>
-                  <li class="mywidth"><a href="pages/contact_us.php">Contact</a></li>
+                  <li class="mywidth"><a href="contact.php">Contact</a></li>
                   <!-- <li class="mywidth"><a href="pages/veri/html.html">Email verification</a></li> -->
-                  <li class="mywidth"><a href="pages/facemodal22.html">About</a></li>
+                  <li class="mywidth"><a href="about.php">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="foo2"><a href="" data-toggle="modal" data-target="#myModal">Login</a></li>

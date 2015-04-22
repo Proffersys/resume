@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <title>Contact Us</title>
     <!-- <link rel="stylesheet" href=""> -->
-    <link href="includes/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
- <link rel="stylesheet" href="css/animate.css">
-
-    <link rel="stylesheet" href="css/cus.css">
+    <link href="../includes/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cus.css">
     <style>
         .jumbotron{
             color: #0D5360;
-            background-color: white;
+            background-color: #819A9F;
         }
         .h1 small{
             font-size: 50%;
@@ -24,67 +20,9 @@
             color: red;
          }   
     </style>
-      <style>
-  .mywidth{
-    width: 20%;
-    text-align: center;
-    font-family: "Comic Sans MS";
-  }
-  .nav-container{
-    width: 90%;
-    height: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1%;
-  }
-  .brand{
-    float: left;
-    width: 20%;
-  }
-  .main-nav{
-    float: right;
-    width: 80%;
-  }
-  .foo1{
-    width: 80%;
-  }
-  .foo2{
-    font-size: large;
-    text-align: center;
-    padding-right: 5px;
-    font-family: "Trebuchet MS";
-  }
-  </style>
-  
 
 </head>
 <body>
-<div class="navbar-wrapper bigEntrance">
-      <div class="nav-container">
-        <div class="navbar navbar-inverse navbar-static-top " role="navigation">
-            <div class="main-nav">
-              <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav foo1">
-                  <li class="mywidth"><a href="index.php">Home</a></li>
-                  <li class=" active mywidth"><a href="contact.php">Contact</a></li>
-                  <!-- <li class="mywidth"><a href="pages/veri/html.html">Email verification</a></li> -->
-                  <li class="mywidth"><a href="about.php">About</a></li>
-                </ul>
-<!--                 <ul class="nav navbar-nav navbar-right">
-                  <li class="foo2"><a href="" data-toggle="modal" data-target="#myModal">Login</a></li>
-                  <li class="foo2"><a href="" data-toggle="modal" data-target="#myModal1">Signup</a></li>
-                </ul>
- -->              </div>
-            </div>
-            <div class="navbar-header brand">
-              <a class="navbar-brand" href="index.php">ProfferSys</a>
-            </div>
-          <!-- </div> -->
-        </div>
-      </div>
-    </div>
-
-
 <div class="jumbotron jumbotron-sm">
     <div class="container">
         <div class="row">
