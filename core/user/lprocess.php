@@ -2,16 +2,18 @@
 include_once '../init.php';
 if (empty($_POST)===false) 
 {
+  // $username=$_POST['username'];
+  // $password=sha1($_POST['password']);
   $username=strip_tags(trim($_POST['username']));
   $password=sha1(strip_tags(trim($_POST['password'])));
-  // echo $username .'<br>'. $password.'<br>';
-  $result = $con->query("SELECT  count(user_name),status,password,dir_id FROM dir_user where user_name = '$username'");
-  // var_dump($result);
-if($result === true){
+  echo $username .'<br>'. $password.'<br>';
+  // var_dump($con);
+  $result = $con->query("SELECT count(user_name),status,password,dir_id FROM dir_user where user_name = '$username'");
+  if($result){
   if ($result->num_rows==1) {
-  	// echo "user found ";
+  	echo "user found ";
   	$row=$result->fetch_object();
-  	print_r($row);
+  	// print_r($row);
   	if ($row->status !=1) {
   		$errors[]="Please activate your account.";
   		$errors[]="Check your mail for further instruction";
@@ -33,14 +35,19 @@ if($result === true){
  }
 
 }else{
-	$errors[]= " we can\'t find you have you register";
+	$errors[]= "We can't find you have you register";
+  $errors[]="Please register to avail our service";
 }
 
 
 }
 if (!empty($errors)) {
-	header('Location: ../../error.php');
+	include_once '../../error.php';
+  echo '<a href="../../index.php">Click Me {Home page}</a>';
+
 }
-// echo "string";
-print_r($errors);
+else{
+  header("Location: ../../dashboard/");
+}
+// print_r($errors);
 ?>

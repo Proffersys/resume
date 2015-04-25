@@ -8,4 +8,15 @@ require ('database/connect.php');
 $errors=array();
 // echo "****";
 // print_r($errors);
+if (isset($_SESSION['dir_id'])) 
+{
+	$dir_user_id=$_SESSION['dir_id'];
+	$result=$con->query("SELECT fname,lname,user_name,gender FROM dir_user WHERE dir_id=$dir_user_id");
+	if ($result) {
+		if($result->num_rows===1){
+			$user_info=$result->fetch_object();
+			// print_r($user_info);
+		}
+	}	
+}
 ?>

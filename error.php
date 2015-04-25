@@ -1,7 +1,3 @@
-<?php 
-require_once 'core/init.php';
-// print_r($errors);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +7,7 @@ require_once 'core/init.php';
 <body>
 	<h2>Sorry have made an Error!..</h2>
 	<?php
-	print_r($errors);
+	// print_r($errors);
 	if (empty($errors)) {
 		echo '<h3>'.'Sorry we are facing some problem.Try again after sometime'.'</h3>'.'<br>';
 	}
@@ -25,11 +21,10 @@ require_once 'core/init.php';
 		}
 		
 		$show= implode('', $output);
-		print_r($show);
-		echo $show;
+		// print_r($show);
+		echo '<center><h4>'.$show.'</center></h4>';
 	}
 
 	?>
-	<a href="index.php">Click Me {Home page}</a>
 </body>
 </html>
