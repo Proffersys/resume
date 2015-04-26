@@ -2,7 +2,12 @@
 session_start();
 // error_reporting(1);
 // error_reporting(E_ALL);
+if(file_exists('database/connect.php')){
 require ('database/connect.php');
+}
+else{
+	echo "cant find connect.php"
+}
 // require ('function.php');
 
 $errors=array();
