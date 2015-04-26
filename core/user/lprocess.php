@@ -47,7 +47,7 @@ if (!empty($errors)) {
 
 }
 else{
-  header("Location: ../../dashboard/");
+  header("Location: ../../landing.php");
 }
 // print_r($errors);
 ?>

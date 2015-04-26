@@ -79,7 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', end
     </style>
 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
- <link rel="stylesheet" type="text/css" href="../includes/font-awesome/css/font-awesome.css">
+ <link rel="stylesheet" type="text/css" href="includes/font-awesome/css/font-awesome.css">
   </head>
   <body>
     <div class="jumbotron" id="intro">
@@ -100,11 +100,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', end
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav" >
-                <li class="active"><a href="#" >Home</a></li>
-                <li><a href="includes/Theme/">DashBoard</a></li>
-                <li><a href="pages/veri/fff/html.html">Verified Email</a></li>
-                <li><a href="pages/contact_us.php">Contact</a></li>
-                <li><a href="pages/facemodal22.html">About</a></li>
+                <li><a href="dashboard/" >Home</a></li>
+                <li><a href="dashboard/">DashBoard</a></li>
+                <li class="active"><a href="landing.php" >Landing</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="about.php">About</a></li>
               </ul> 
             </div>
           </div>
@@ -136,12 +136,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', end
                                 <div class="col-md-12" style="padding-top:30px;">
                                 <div class="row">
                                 <div class="col-md-4">
-                                <a href="../dashboard/update_profile.php">
+                                <a href="dashboard/udprofile.php">
                                 <i class="fa fa-arrow-circle-o-right fa-3x">Complete profile</i>  
                                 </a>
                                 </div>
                                 <div class="col-md-4 col-md-offset-3">
-                                <a href="../dashboard/index.php">
+                                <a href="dashboard/index.php">
                                 <i class="fa fa-arrow-circle-o-right fa-3x">To dashboard</i>  
                                 </a>
                                 </div>
