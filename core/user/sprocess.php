@@ -1,39 +1,66 @@
 <?php
-require_once("core/init.php");
-echo "dshbfhsdfhjs";
-
-if(isset($_POST['submit']))
+require_once("../init.php");
+// echo "dshbfhsdfhjs";
+if(empty($_POST)===false)
 {
-    $fname=$_POST['firstname'];
-    $lname=$_POST['lastname'];
-    $email=$_POST['email'];
-    $gender=$_POST['gender'];
-    $month=$_POST['month'];
-    $day=$_POST['day'];
-    $year=$_POST['year'];
-    $user_name=$fname.time();
-    //$user_name=$fname+" "+$lname;
-    $password=sha1($_POST['password']);
-    $c_password=sha1($_POST['confirm_password']);
+    $fname=strip_tags(trim($_POST['firstname']));
+    $lname=strip_tags(trim($_POST['lastname']));
+    $email=strip_tags(trim($_POST['email']));
+    $gender=strip_tags(trim($_POST['gender']));
+    $month=strip_tags(trim($_POST['month']));
+    $day=strip_tags(trim($_POST['day']));
+    $year=strip_tags(trim($_POST['year']));
+    $user_name=strip_tags(trim($fname.time()));
+    $password=sha1(strip_tags(trim($_POST['password1'])));
+    $c_password=sha1(strip_tags(trim($_POST['confirm_password'])));
     $birthday=$year."-".$month."-".$day;
-     // require_once ("core/database/init.php");
+// echo $fname .'<br>'.$lname.'<br>'.$email.'<br>'.$gender.'<br>'.$user_name.'<br>'.$password.'<br>'.$c_password ;
     if(!empty($fname)and!empty($lname)and!empty($email)and!empty($gender)and!empty($month)and!empty($day)and!empty($year))
-    {
-        if(($password===$c_password))
+     {   
+        if($password === $c_password)
         {
-            $checkquery=mysqli_query($con,"SELECT email from dir_user WHERE email='$email'");
+            $checkquery=$con->query("SELECT email from dir_user WHERE email='$email'");
+            // print_r($checkquery);
             if($checkquery)
             {
-                $count=mysqli_num_rows($checkquery);
+                $count=$checkquery->num_rows;
+                echo "count is".$count;
                 if($count==0)
                 {
-                    $query=mysqli_query($con,"INSERT into dir_user(fname,lname,email,gender,dob,password,user_name)values('$fname','$lname','$email','$gender','$birthday','$password','$user_name');");
-                    if($query)
-                    {
-                        header("Location:http://www.google.com");
-                        //header("Location:landing_page.php");
-                        //echo "<div class='success'>You have been registered successfully, You may now login.</div>";
-                        //$_SESSION['user_session']=array('user_fname'=>$fname,'user_lname'=>$lname,'user_name'=>$user_name,'gender'=>$gender,'dob'=>$birthday); 
+                    $insert = $con->query("INSERT INTO dir_user(fname,lname,email,gender,dob,password,user_name) VALUES('$fname','$lname','$email','$gender','$birthday','$password','$user_name');");
+                    echo "string1";
+                    if($con->affected_rows)
+                    {   
+                        echo "string2";
+                        $id=$con->query("SELECT dir_id FROM dir_user WHERE email='$email' AND user_name='$user_name'");
+                        if($id)
+                        {
+                            echo "string3";
+                            $row1=$id->fetch_object();
+                            $temp1=$row1->dir_id;
+                            $result3=$con->query("INSERT INTO user(dir_id,fname,lname,user_name,email)VALUES ($temp1,'$fname','$lname','$user_name','$email')");
+                            if ($con->affected_rows) 
+                            {
+                                echo "string4";
+                                $result4=$con->query("SELECT ssn FROM user WHERE dir_id='$temp1' AND user_name='$user_name'");
+                                if($result4)
+                                {
+                                    echo "string5";
+                                    $row2=$result4->fetch_object();
+                                    echo "You are now registered";
+                                    echo $row2->ssn;
+                                    if ($update= $con->query("UPDATE dir_user set ssn=$row2->ssn WHERE dir_id=$temp1")) 
+                                    {
+                                        echo "string6";
+                                        var_dump($update);
+                                        echo $con->affected_rows;
+                                        header("Location: login.php");
+
+                                        }
+
+                                }
+                            }
+                        }
                     }
                     else
                     { 
@@ -45,6 +72,9 @@ if(isset($_POST['submit']))
                     echo "<div class='error'>Account to this email id is already in use.</div>";    
                 }   
             }
+            else{
+                echo "We are facing some technical issue.Please try again after sometime";
+            }
         }
         else
         {
@@ -55,9 +85,7 @@ if(isset($_POST['submit']))
     {
         echo "<div class='error'>Please fill in all the fields</div>";
     }
+
 }
-/*else
-{
-   echo "not submitted"; //if form doesn't get submitted!
-}*/
+
 ?>

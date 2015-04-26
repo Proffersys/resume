@@ -9,11 +9,11 @@
     <!-- sidebar menu start-->
   <ul class="sidebar-menu" id="nav-accordion">
   	  <p class="centered">
-        <a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
+        <a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
       </p>
   	  <h5 class="centered"><?php echo $user_info->fname .' '. $user_info->lname;?></h5>
       <li class="mt">
-          <a class="active" href="index.php">
+          <a href="index.php">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
           </a>
@@ -41,7 +41,7 @@
               <i class="fa fa-cogs"></i>
               <span>Events</span>
           </a>
-          <a href="analysis.php">
+          <a class="active" href="analysis.php">
               <i class="fa fa-bar-chart-o"></i>
               <span>Analysis</span>
           </a>

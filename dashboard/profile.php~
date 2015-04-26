@@ -13,11 +13,11 @@
       </p>
   	  <h5 class="centered"><?php echo $user_info->fname .' '. $user_info->lname;?></h5>
       <li class="mt">
-          <a class="active" href="index.php">
+          <a href="index.php">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
           </a>
-          <a href="profile.php">
+          <a class="active" href="profile.php">
               <i class="fa fa-desktop"></i>
               <span>Profile</span>
           </a>

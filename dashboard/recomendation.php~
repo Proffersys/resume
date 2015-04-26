@@ -13,7 +13,7 @@
       </p>
   	  <h5 class="centered"><?php echo $user_info->fname .' '. $user_info->lname;?></h5>
       <li class="mt">
-          <a class="active" href="index.php">
+          <a href="index.php">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
           </a>
@@ -33,7 +33,7 @@
               <i class="fa fa-dashboard"></i>
               <span>Connections</span>
           </a>
-          <a href="recomendation.php">
+          <a class="active" href="recomendation.php">
               <i class="fa fa-th"></i>
               <span>Recomendation</span>
           </a>

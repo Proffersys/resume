@@ -9,15 +9,15 @@
     <!-- sidebar menu start-->
   <ul class="sidebar-menu" id="nav-accordion">
   	  <p class="centered">
-        <a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
+        <a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
       </p>
   	  <h5 class="centered"><?php echo $user_info->fname .' '. $user_info->lname;?></h5>
       <li class="mt">
-          <a class="active" href="index.php">
+          <a href="index.php">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
           </a>
-          <a href="profile.php">
+          <a class="active" href="profile.php">
               <i class="fa fa-desktop"></i>
               <span>Profile</span>
           </a>
@@ -70,9 +70,43 @@
       *********************************************************************************************************************************************************** -->
 <!--main content start-->
 <section id="main-content">
-    <section class="wrapper site-min-height">
-              			
-		</section>
+  <section class="wrapper site-min-height">
+  <h2>Basic Info</h2>
+      <div class="basic">
+        <?php
+          $userid=$_SESSION['dir_id'];
+          // echo $userid;
+          $bresult=$con->query("select fname,lname,mobile,email,gender,dob,location,website,area_code from dir_user where dir_id='$userid'");
+          if ($bresult) {
+            # code...
+            $data=$bresult->fetch_object();
+            echo "First Name:".$data->fname.'<br>';
+            echo "Last Name:".$data->lname.'<br>';
+            echo "Mobile:".$data->mobile.'<br>';
+            echo "Email:".$data->email.'<br>';
+            echo "Gender".$data->gender.'<br>';
+            echo "DOB".$data->dob.'<br>';
+            echo "Location:".$data->location.'<br>';
+            echo "Website:".$data->website.'<br>';
+            echo "Area Code:".$data->area_code.'<br>';
+
+          }
+        ?>
+      </div>
+  <h2>Educational Info</h2>
+      
+  <h2>Proffessional Info</h2>
+
+
+
+
+
+
+
+
+
+
+	</section>
 </section><!-- /MAIN CONTENT -->
 
 <!--main content end-->

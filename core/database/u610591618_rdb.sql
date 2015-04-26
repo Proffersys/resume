@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2015 at 09:22 PM
+-- Generation Time: Apr 26, 2015 at 04:49 PM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.9
 
@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `college` (
 
 CREATE TABLE IF NOT EXISTS `dir_user` (
   `dir_id` bigint(12) NOT NULL AUTO_INCREMENT,
+  `ssn` int(11) DEFAULT NULL,
   `fname` varchar(25) NOT NULL,
   `lname` varchar(25) NOT NULL,
   `user_name` varchar(20) NOT NULL,
@@ -62,17 +63,38 @@ CREATE TABLE IF NOT EXISTS `dir_user` (
   PRIMARY KEY (`dir_id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `dir_user`
 --
 
-INSERT INTO `dir_user` (`dir_id`, `fname`, `lname`, `user_name`, `mobile`, `email`, `password`, `status`, `gender`, `dob`, `location`, `website`, `area_code`) VALUES
-(1, 'dfsa', 'dsfsd', 'dfsa1429357534', 0, 'saf@fdfs.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'M', '1935-01-01', '', '', 0),
-(2, 'awq', 'sd', 'qwe123', 0, 'sds@h.com', '8cb2237d0679ca88db6464eac60da96345513964', 0, 'F', '1935-01-01', '', '', 0),
-(3, 'QALEAT', 'dcsc', 'QALEAT1429359905', 0, 'qaleat1978@dayrep.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'M', '1935-01-01', '', '', 0),
-(4, 'gaurav', 'arya', 'gaurav.3437', 8447855205, 'gaurav.arya37@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, 'Male', '2015-04-06', 'noida', 'gauravaryalive.in', 25252);
+INSERT INTO `dir_user` (`dir_id`, `ssn`, `fname`, `lname`, `user_name`, `mobile`, `email`, `password`, `status`, `gender`, `dob`, `location`, `website`, `area_code`) VALUES
+(1, NULL, 'dfsa', 'dsfsd', 'dfsa1429357534', 0, 'saf@fdfs.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'M', '1935-01-01', '', '', 0),
+(2, NULL, 'awq', 'sd', 'qwe123', 0, 'sds@h.com', '8cb2237d0679ca88db6464eac60da96345513964', 1, 'F', '1935-01-01', '', '', 0),
+(3, NULL, 'QALEAT', 'dcsc', 'QALEAT1429359905', 0, 'qaleat1978@dayrep.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'M', '1935-01-01', '', '', 0),
+(4, NULL, 'gaurav', 'arya', 'gaurav.3437', 8447855205, 'gaurav.arya37@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, 'Male', '2015-04-06', 'noida', 'gauravaryalive.in', 25252),
+(5, NULL, 'Gaurav', 'wew', 'Gaurav1429982775', 0, 'we@eer.com', '6cd4a90adfa66116d2e5ca0e5196d497f869a243', 0, 'M', '1935-01-01', '', '', 0),
+(6, NULL, 'sadasf', 'fdsfsd', 'sadasf1429983454', 0, 'dsfsd@fsg.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'F', '1935-01-01', '', '', 0),
+(7, NULL, 'Remo', 'dosa', 'Remo1429992639', 0, 'remo.dosa34@gmail.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'F', '1935-01-01', '', '', 0),
+(8, NULL, 'martin', 'garte', 'martin1429992855', 0, 'martin@gmail.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'F', '1935-01-01', '', '', 0),
+(9, NULL, 'chutiya', 'ram', 'chutiya1429993405', 0, 'chu@gmail.com', '95bce394d432997231e7ea96a978a6533b65e97a', 0, 'F', '1935-01-01', '', '', 0),
+(10, NULL, 'hello', 'world', 'hello1429996481', 0, 'hello@gmail.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(11, NULL, 'aks', 'dwi', 'aks1429996755', 0, 'ada@fmaf.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(12, NULL, 'gopu', 'rouge', 'gopu1429997187', 0, 'roguenamtion@gmail.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'M', '1935-01-01', '', '', 0),
+(13, NULL, 'fafs', 'dsf', 'fafs1429997378', 0, 'dsf@fsf.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'M', '1935-01-01', '', '', 0),
+(14, NULL, 'asda', 'dsfs', 'asda1430044595', 0, 'dsf@sdf.om', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'M', '1935-01-01', '', '', 0),
+(15, NULL, 'adfa', 'sfdfas', 'adfa1430044865', 0, 'sdfs@gmail.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(16, NULL, 'ggfsfs', 'fsfdsaa', 'ggfsfs1430044943', 0, 'ddfddssdsd@sds.fdfsd', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(17, NULL, 'afasf', 'fsdfs', 'afasf1430045060', 0, 'fsdfssdff@fsdfsfs.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(18, NULL, 'fssfs', 'fsdfsfs', 'fssfs1430045422', 0, 'dsfsd@sfs.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(19, NULL, 'asfasfd', 'sdfgs', 'asfasfd1430045954', 0, 'dsgfsgdfgdsgsfdgsd@dsgs.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1953-01-01', '', '', 0),
+(20, NULL, 'afasgfdsgds', 'sdfsdf', 'afasgfdsgds143004656', 0, 'fsdfagasdg@fdfs.dfsf', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(21, NULL, 'afa', 'fdgdffg', 'afa1430046703', 0, 'fdgdsgd@sgs.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'M', '1935-10-01', '', '', 0),
+(22, NULL, 'fsfsfsg', 'fsdfddsf', 'fsfsfsg1430046763', 0, 'fsdfsddfs@dsdsd.sdffsdsd', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(23, NULL, 'fsdsfdfs', 'SDDFFDGFDG', 'fsdsfdfs1430046871', 0, 'SDDSDSF@FFS.COM', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(24, 65, 'ffffv', 'rffdfd', 'ffffv1430046925', 0, 'ffff@hhhj.sddsds', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0),
+(25, 66, 'fff', 'vvghvgcg', 'fff1430046989', 0, 'vvghgvvghh@vvhj.com', '96b21c810cf72494fca6eb02bf1487c42b141442', 0, 'F', '1935-01-01', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -395,25 +417,26 @@ CREATE TABLE IF NOT EXISTS `user` (
   `fb_id` bigint(20) DEFAULT NULL,
   `go_id` bigint(20) DEFAULT NULL,
   `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
   `user_name` varchar(50) NOT NULL,
   `profile_pic` varchar(700) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(700) NOT NULL,
-  `active` int(2) NOT NULL,
+  `status` int(2) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ssn`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ssn`, `dir_id`, `fb_id`, `go_id`, `fname`, `user_name`, `profile_pic`, `password`, `email`, `active`, `timestamp`) VALUES
-(1, 101, NULL, NULL, 'Gaurav', 'gauravarya3437', '', '5f4dcc3b5aa765d61d8327deb882cf99', 'gaurav.arya37@gmail.com', 1, '2015-04-06 21:51:33'),
-(49, 129, NULL, NULL, 'hack', 'arya4334', '', '5f4dcc3b5aa765d61d8327deb882cf99', 'arya@yahoo.com', 1, '2015-04-25 13:26:24'),
-(3, 12, NULL, NULL, 'Gaurav', 'gaurav8777', '', '5f4dcc3b5aa765d61d8327deb882cf99', 'testing123@gmail.com', 1, '2015-04-06 21:51:33'),
-(14, 189, NULL, NULL, 'rocky', 'arya34334', '', '838695cd2e9d13d45af48e55a79c8645', 'arya@3yahoo.com', 1, '2015-04-06 22:24:39');
+INSERT INTO `user` (`ssn`, `dir_id`, `fb_id`, `go_id`, `fname`, `lname`, `user_name`, `profile_pic`, `password`, `email`, `status`, `timestamp`) VALUES
+(63, 4, NULL, NULL, 'gaurav', 'arya', 'gaurav.3437', '', '', 'gaurav.arya37@gmail.com', 0, '2015-04-26 10:57:25'),
+(64, 19, NULL, NULL, 'asfasfd', 'sdfgs', 'asfasfd1430045954', '', '', 'dsgfsgdfgdsgsfdgsd@dsgs.com', 0, '2015-04-26 10:59:14'),
+(65, 24, NULL, NULL, 'ffffv', 'rffdfd', 'ffffv1430046925', '', '', 'ffff@hhhj.sddsds', 0, '2015-04-26 11:15:25'),
+(66, 25, NULL, NULL, 'fff', 'vvghvgcg', 'fff1430046989', '', '', 'vvghgvvghh@vvhj.com', 0, '2015-04-26 11:16:29');
 
 -- --------------------------------------------------------
 

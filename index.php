@@ -1,5 +1,9 @@
 <?php
 require('core/init.php');
+if (isset($_SESSION['dir_id']))
+{
+  header("Location: dashboard/");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -285,7 +289,7 @@ require('core/init.php');
       <input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name" id="lname" />                        </div>
   </div>
   <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email" id="email"/>
-  <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  id="password"/>
+  <input type="password" name="password1" value="" class="form-control input-lg" placeholder="Password"  id="password1"/>
   <input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" id="cpassword" />                   
   <label id="bdate">Birth Date</label>
 <div class="row">
@@ -484,7 +488,7 @@ $("#form").submit(function(){
   var fname=$("#fname");
   var lname=$("#lname");
   var email=$("#email");
-  var password=$("#password");
+  var password1=$("#password1");
   var cpassword=$("#cpassword");
   var m=$("#male");
   var f=$("#female");
@@ -532,20 +536,20 @@ $("#form").submit(function(){
       email.focus();
       return false;
   }
-  if(password.val()===""){
-      $("#password").after("<span class='error'>Please enter your password</span>");
+  if(password1.val()===""){
+      $("#password1").after("<span class='error'>Please enter your password</span>");
       $(".error").slideDown();
-      password.focus();
+      password1.focus();
       return false;
   }
 
-  if(!passwordRule.test(password.val())){
-      $("#password").after("<span class='error'>password must start and end with an alphanumeric and must contain a special character</span>");
+  if(!passwordRule.test(password1.val())){
+      $("#password1").after("<span class='error'>password must start and end with an alphanumeric and must contain a special character</span>");
       $(".error").slideDown();
-      password.focus();
+      password1.focus();
       return false;
   }
-  if(cpassword.val()!=password.val())
+  if(cpassword.val()!=password1.val())
   {
       $("#cpassword").after("<span class='error'>passwords mismatch</span>");
       $(".error").slideDown();
