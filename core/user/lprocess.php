@@ -1,5 +1,10 @@
 <?php
+if(file_exists('../init.php')){
 include_once '../init.php';
+}
+else{
+	echo "cant reach init.php";
+}
 if (empty($_POST)===false) 
 {
   // $username=$_POST['username'];
