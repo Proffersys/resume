@@ -5,9 +5,9 @@ session_start();
 //if(file_exists('database/connect.php')){
 require ('database/connect.php');
 //}
-else{
-	echo "cant find connect.php"
-}
+//else{
+//	echo "cant find connect.php"
+//}
 // require ('function.php');
 
 $errors=array();
